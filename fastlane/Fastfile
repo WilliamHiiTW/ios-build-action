@@ -16,7 +16,7 @@ platform :ios do
 
     create_keychain(
       name: keychain_name,
-      password: nil,
+      password: 1234,
       default_keychain: true,
       unlock: true,
       timeout: 3600
@@ -32,7 +32,7 @@ platform :ios do
           end,
         certificate_password: ENV['CERTIFICATE_PASSWORD'],
         keychain_name: keychain_name,
-        keychain_password: nil,
+        keychain_password: 1234,
         log_output: true
       )
       import_certificate(
@@ -44,7 +44,7 @@ platform :ios do
           end,
         certificate_password: ENV['CERTIFICATE_PASSWORD'],
         keychain_name: keychain_name,
-        keychain_password: nil,
+        keychain_password: 1234,
         log_output: true
       )
     else
@@ -53,7 +53,7 @@ platform :ios do
           !ENV['P12_PATH'].empty? ? ENV['P12_PATH'] : 'ios-build.p12',
         certificate_password: ENV['CERTIFICATE_PASSWORD'],
         keychain_name: keychain_name,
-        keychain_password: nil,
+        keychain_password: 1234,
         log_output: true
       )
     end
